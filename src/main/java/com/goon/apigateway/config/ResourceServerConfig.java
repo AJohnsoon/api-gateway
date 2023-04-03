@@ -26,7 +26,12 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     private JwtTokenStore tokenStore;
     private static final String[] PUBLIC = { "/ms-oauth/oauth/token" };
     private static final String[] OPERATOR = { "/ms-worker/**" };
-    private static final String[] ADMIN = { "/ms-payroll/**", "/ms-user/**", "/actuator/**", "/ms-worker/actuator/**", "/ms-oauth/actuator/**" };
+    private static final String[] ADMIN = {
+            "/ms-payroll/**",
+            "/ms-user/**", "/actuator/**",
+            "/ms-worker/actuator/**",
+            "/ms-oauth/actuator/**"
+    };
 
     public void configuration(ResourceServerSecurityConfigurer resources) throws Exception {
         resources.tokenStore(tokenStore);
