@@ -28,7 +28,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     private static final String[] OPERATOR = { "/ms-worker/**" };
     private static final String[] ADMIN = {
             "/ms-payroll/**",
-            "/ms-user/**", "/actuator/**",
+            "/ms-user/**",
+            "/actuator/**",
             "/ms-worker/actuator/**",
             "/ms-oauth/actuator/**"
     };
