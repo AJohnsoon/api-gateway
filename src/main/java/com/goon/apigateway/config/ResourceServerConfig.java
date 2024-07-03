@@ -24,12 +24,12 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Autowired
     private JwtTokenStore tokenStore;
-    private static final String[] PUBLIC = { "/ms-oauth/oauth/token" };
+    private static final String[] PUBLIC = { "/ms-oauth/oauth/token"};
     private static final String[] OPERATOR = { "/ms-worker/**" };
     private static final String[] ADMIN = {
             "/ms-payroll/**",
-            "/ms-user/**",
             "/actuator/**",
+            "/ms-user/**",
             "/ms-worker/actuator/**",
             "/ms-oauth/actuator/**"
     };
@@ -64,7 +64,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     public FilterRegistrationBean<CorsFilter> corsFilter() {
         FilterRegistrationBean<CorsFilter> bean
                 = new FilterRegistrationBean<>(new CorsFilter(corsConfigurationSource()));
-        bean.setOrder( Ordered.HIGHEST_PRECEDENCE);
+        bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
         return bean;
     }
 }
